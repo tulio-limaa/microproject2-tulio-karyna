@@ -13,7 +13,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  releaseYear: {
+  release_year: {
     type: Number,
   },
   genre: {
