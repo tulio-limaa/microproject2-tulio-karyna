@@ -15,11 +15,16 @@ const movieSchema = new mongoose.Schema({
   },
   release_year: {
     type: Number,
+    required: true
   },
   genre: {
     type: String,
     enum: ['Action', 'Romance', 'Drama', 'Horror', 'Thriller', 'Other']
   },
+  country: {
+    type: String,
+    required: true
+  }
 }, { timestamps: true });
 
 //Create a movie model
