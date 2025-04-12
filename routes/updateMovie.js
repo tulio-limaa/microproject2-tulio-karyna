@@ -8,10 +8,10 @@ const router = express.Router();
 router.put('/:movie_id', async (req, res) => {
     try {
         const { movie_id } = req.params;
-        const { title, director, release_year, genre } = req.body;
+        const { title, director, release_year, genre, country } = req.body;
 
         // Check that all required fields are provided
-        if (!title || !director || !release_year || !genre) {
+        if (!title || !director || !release_year || !genre || !country) {
             return res.status(400).json({ message: 'All fields are required.' });
         }
 
@@ -23,6 +23,7 @@ router.put('/:movie_id', async (req, res) => {
                 director,
                 release_year,
                 genre,
+                country,
             },
             { new: true }  
         );

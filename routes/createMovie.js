@@ -9,10 +9,10 @@ router.post('/', async (req, res) => {
   try {
     console.log(req.body); 
 
-    const { title, director, release_year, genre } = req.body;
+    const { title, director, release_year, genre, country } = req.body;
 
     // Check that all required fields are provided.
-    if (!title || !director || !release_year || !genre) {
+    if (!title || !director || !release_year || !genre || !country) {
       return res.status(400).json({ message: 'All fields are required.' });
     }
 
@@ -21,6 +21,7 @@ router.post('/', async (req, res) => {
       director,
       release_year,
       genre,
+      country,
     });
 
     const savedMovie = await newMovie.save();
